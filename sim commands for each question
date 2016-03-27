@@ -1,0 +1,6 @@
+1. sim-outorder -fastfwd 200000000 -max:inst 300000000 equake.ss<equake.in
+2. sim-outorder -fastfwd 200000000 -max:inst 300000000 -issue:inorder true equake.ss<equake.in
+3. sim-safe equake.ss<equake.in
+4. 	(1)sim-outorder -fastfwd 200000000 -max:inst 300000000 equake.ss<equake.in
+	(2)sim-outorder -fastfwd 200000000 -max:inst 300000000 -mem:lat 6 6 equake.ss<equake.in
+	(3)sim-outorder -fastfwd 200000000 -max:inst 300000000 -mem:lat 1 1 -cache:il2lat 1 -cache:dl2lat 1 equake.ss<equake.in
